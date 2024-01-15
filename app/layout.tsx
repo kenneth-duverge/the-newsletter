@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 
 import { Toaster } from '@/components/ui/toaster';
 import ConvexClientProvider from '@/components/convex-client-provider';
-import { PageLayout } from '@/components/layout';
+import { PageLayout } from '../components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
