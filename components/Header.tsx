@@ -1,4 +1,4 @@
-import { NewEventButton } from './NewEventButton';
+import { NewEventButton } from './new-event-button';
 
 export const Header = () => {
   return (

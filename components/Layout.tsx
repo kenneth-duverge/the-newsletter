@@ -1,5 +1,5 @@
-import { Header } from './Header';
-import { ViewPicker } from './ViewPicker';
+import { Header } from './header';
+import { ViewPicker } from './view-picker';
 
 export const PageLayout = ({ children }: React.PropsWithChildren) => {
   return (

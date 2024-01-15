@@ -4,9 +4,9 @@ import { api } from '@/convex/_generated/api';
 
 import { useEvents } from '@/hooks/use-events';
 
-import { Event } from '../Event';
+import { Event } from '../event';
 import { useToast } from '../ui/use-toast';
-import { NewEventButton } from '../NewEventButton';
+import { NewEventButton } from '../new-event-button';
 import { formatTime } from '@/lib/format-time';
 
 export const ListView = () => {
