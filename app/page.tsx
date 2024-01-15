@@ -1,4 +1,4 @@
-import { Newsletter } from '@/components/Newsletter';
+import { Newsletter } from '@/components/newsletter';
 
 export default function Home() {
   return (

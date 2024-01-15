@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { EventForm } from './EventForm';
+import { EventForm } from './event-form';
 
 export const NewEventButton = ({ children = 'New event' }: React.PropsWithChildren) => {
   const [open, setOpen] = useState(false);
