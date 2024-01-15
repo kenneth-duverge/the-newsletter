@@ -9,7 +9,7 @@ import { useToast } from '../ui/use-toast';
 import { NewEventButton } from '../NewEventButton';
 import { formatTime } from '@/lib/format-time';
 
-export const CalendarEventsView = () => {
+export const ListView = () => {
   const { toast } = useToast();
   const data = useEvents();
   const deleteEvent = useMutation(api.events.deleteEvent);
