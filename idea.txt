@@ -1,0 +1,5 @@
+- The Location input can be a dynamic component, some ideas:
+  - Show a mini globe, black and white accents and a nice accent color for the point Location
+  - Combobox component to search for the area, clicking enter animates the globe to that Location
+    - Other crazy ideas:
+      - The location input can be it's own page/app with a fully featured global search, maybe?
