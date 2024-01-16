@@ -1,6 +1,6 @@
 'use client';
 
-export const Event = ({
+export const NewsLetterEvent = ({
   children,
   name,
   onDelete,
@@ -68,4 +68,4 @@ const Location = ({ city, date, time }: EventLocation) => {
   );
 };
 
-Event.Location = Location;
+NewsLetterEvent.Location = Location;

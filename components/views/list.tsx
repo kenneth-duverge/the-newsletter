@@ -6,10 +6,11 @@ import { api } from '../../convex/_generated/api';
 
 import { useEvents } from '../../hooks/use-events';
 
-import { Event } from '../event';
+import { NewsLetterEvent } from '../event';
 import { useToast } from '../ui/use-toast';
 import { NewEventButton } from '../new-event-button';
 import { formatTime } from '../../lib/format-time';
+
 
 export const ListView = () => {
   const { toast } = useToast();
@@ -33,7 +34,7 @@ export const ListView = () => {
     <>
       {data.map((n) => {
         return (
-          <Event
+          <NewsLetterEvent
             key={n._id}
             name={n.name}
             onDelete={async () => {
@@ -41,7 +42,7 @@ export const ListView = () => {
               toast({ title: 'Event deleted successfully' });
             }}
           >
-            <Event.Location
+            <NewsLetterEvent.Location
               city={`${n.location.city}, ${n.location.state}`}
               date={new Date(n.date).toLocaleDateString('en-us', {
                 weekday: 'long',
@@ -50,7 +51,7 @@ export const ListView = () => {
               })}
               time={formatTime(n.time)}
             />
-          </Event>
+          </NewsLetterEvent>
         );
       })}
     </>
