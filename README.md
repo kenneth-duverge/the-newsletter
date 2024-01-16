@@ -1,8 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Tools
+- Package Manager / Bundling
+  - [Bun Package Manager](https://bun.sh/) 
+- Components / Styling
+  - [tailwindcss](https://tailwindcss.com/)
+  - [shadcn/ui](https://ui.shadcn.com/)
+- Database
+  - [convex](https://www.convex.dev/)
+
 ## Getting Started
 
-First, install packages:
+First follow the instructions to [install Bun](https://bun.sh/docs/installation) based on your platform.
+
+Next, install packages:
 
 ```bash
 bun install
