@@ -11,16 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First install Bun:
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
-Run the following to create a `.env.local` file:
-```
-echo 'NEXT_PUBLIC_CONVEX_URL=https://rightful-quail-224.convex.cloud' > .env.local
-```
+First follow the instructions to [install Bun](https://bun.sh/docs/installation) based on your platform.
 
 Next, install packages:
 
