@@ -1,8 +1,28 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Tools
+- Package Manager / Bundling
+  - [Bun Package Manager](https://bun.sh/) 
+- Components / Styling
+  - [tailwindcss](https://tailwindcss.com/)
+  - [shadcn/ui](https://ui.shadcn.com/)
+- Databse
+  - [convex](https://www.convex.dev/)
+
 ## Getting Started
 
-First, install packages:
+First install Bun:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+Run the following to create a `.env.local` file:
+```
+echo 'NEXT_PUBLIC_CONVEX_URL=https://rightful-quail-224.convex.cloud' > .env.local
+```
+
+Next, install packages:
 
 ```bash
 bun install
