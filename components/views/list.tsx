@@ -6,7 +6,7 @@ import { api } from '../../convex/_generated/api';
 
 import { useEvents } from '../../hooks/use-events';
 
-import { NewsLetterEvent } from '../event';
+import { NewsLetterEvent } from '../NewsletterEvent';
 import { useToast } from '../ui/use-toast';
 import { NewEventButton } from '../new-event-button';
 import { formatTime } from '../../lib/format-time';
