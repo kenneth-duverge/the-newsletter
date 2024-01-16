@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Components / Styling
   - [tailwindcss](https://tailwindcss.com/)
   - [shadcn/ui](https://ui.shadcn.com/)
-- Databse
+- Database
   - [convex](https://www.convex.dev/)
 
 ## Getting Started
