@@ -3,9 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 
 import { useEvents } from '@/hooks/use-events';
-import { ListView } from './views/list';
-import { CalendarView } from './views/calendar';
-import { BlogView } from './views/blog';
+import { BlogView, CalendarView, ListView } from '@/components/views';
 
 const VIEWS: Record<string, any> = {
   list: ListView,

@@ -1,12 +1,13 @@
 'use client';
 
+import { MoreHorizontal } from 'lucide-react';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { MoreHorizontal } from 'lucide-react';
 
 export const NewsLetterEvent = ({
   children,
