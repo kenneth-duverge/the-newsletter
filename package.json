@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm-run-all dev:init --parallel dev:server dev:client",
+    "dev": "npm-run-all --parallel dev:server dev:client",
     "dev:server": "convex dev",
     "dev:client": "next dev",
-    "dev:init": "convex dev --until-success",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,7 +18,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "convex": "1.8.0",
+    "convex": "1.7.1",
     "date-fns": "^3.2.0",
     "lucide-react": "^0.308.0",
     "next": "14.0.4",
