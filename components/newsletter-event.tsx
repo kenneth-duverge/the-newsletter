@@ -13,7 +13,7 @@ export const NewsLetterEvent = ({
   children,
   name,
   onDelete,
-}: React.PropsWithChildren<{ onDelete: VoidFunction; name: string }>) => {
+}: React.PropsWithChildren<{ onDelete?: VoidFunction; name: string }>) => {
   return (
     <div className="w-[500px] h-[200px] font-mono border rounded-md p-4 flex flex-col justify-between">
       <div className="w-full flex justify-between">

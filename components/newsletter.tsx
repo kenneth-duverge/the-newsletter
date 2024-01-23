@@ -3,19 +3,17 @@
 import { useSearchParams } from 'next/navigation';
 
 import { useEvents } from '@/hooks/use-events';
-import { BlogView, CalendarView, ListView } from '@/components/views';
+import { ListView } from './views/list';
 
 const VIEWS: Record<string, any> = {
   list: ListView,
-  calendar: CalendarView,
-  blog: BlogView,
 };
 
 export const Newsletter = () => {
   useEvents();
   const params = useSearchParams();
 
-  const View = VIEWS[params.get('view') || ''] || CalendarView;
+  const View = VIEWS[params.get('view') || ''] || '';
 
   return <View />;
 };
