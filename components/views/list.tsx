@@ -2,15 +2,15 @@
 
 import { useMutation } from 'convex/react';
 
-import { api } from '../../convex/_generated/api';
+import { api } from '@/convex/_generated/api';
 
-import { useEvents } from '../../hooks/use-events';
+import { NewsLetterEvent } from '@/components/newsletter-event';
+import { useToast } from '@/components/ui/use-toast';
+import { NewEventButton } from '@/components/new-event-button';
 
-import { NewsLetterEvent } from '../newsletter-event';
-import { useToast } from '../ui/use-toast';
-import { NewEventButton } from '../new-event-button';
-import { formatTime } from '../../lib/format-time';
+import { useEvents } from '@/hooks/use-events';
 
+import { formatTime } from '@/lib/format-time';
 
 export const ListView = () => {
   const { toast } = useToast();

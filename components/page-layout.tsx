@@ -1,5 +1,5 @@
-import { NewEventButton } from './new-event-button';
-import { ViewPicker } from './view-picker';
+import { NewEventButton } from '@/components/new-event-button';
+import { ViewPicker } from '@/components/view-picker';
 
 export const PageLayout = ({ children }: React.PropsWithChildren) => {
   return (
