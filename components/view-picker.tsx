@@ -1,51 +1,48 @@
 'use client';
 
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import { BookOpenText, CalendarDays, List } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { Button } from './ui/button';
 
+interface LinkButtonProps {
+  className?: string;
+  href: string;
+  active: boolean;
+}
+
 const LinkButton = ({
   children,
-  to,
-  className,
-}: React.PropsWithChildren<{ className: string; to: 'calendar' | 'list' | 'blog' }>) => {
+  href,
+  className = '',
+  active,
+}: React.PropsWithChildren<LinkButtonProps>) => {
   return (
-    <Button asChild variant="outline" size="icon" className={className}>
-      <Link href={{ pathname: '', query: { view: to } }} replace>
-        {children}
-      </Link>
+    <Button
+      asChild
+      variant="outline"
+      size="icon"
+      className={`${className} ${active ? 'bg-accent text-accent-foreground' : ''}`}
+    >
+      <Link href={href}>{children}</Link>
     </Button>
   );
 };
 
 export const ViewPicker = () => {
-  const params = useSearchParams();
+  const pathname = usePathname();
   return (
-    <div className="flex gap-2 w-fit p-4">
-      <LinkButton
-        to="calendar"
-        className={
-          params.get('view') === 'calendar' || params.get('view') === null
-            ? 'bg-accent text-accent-foreground'
-            : ''
-        }
-      >
+    <nav className="flex gap-2 w-fit p-4">
+      <LinkButton href="/calendar" active={pathname.includes('calendar')}>
         <CalendarDays />
       </LinkButton>
-      <LinkButton
-        to="list"
-        className={params.get('view') === 'list' ? 'bg-accent text-accent-foreground' : ''}
-      >
+      <LinkButton href="/list" active={pathname.includes('list')}>
         <List />
       </LinkButton>
-      <LinkButton
-        to="blog"
-        className={params.get('view') === 'blog' ? 'bg-accent text-accent-foreground' : ''}
-      >
+      <LinkButton href="/blog" active={pathname.includes('blog')}>
         <BookOpenText />
       </LinkButton>
-    </div>
+    </nav>
   );
 };
