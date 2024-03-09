@@ -11,6 +11,7 @@ import { NewEventButton } from '@/components/new-event-button';
 import { useEvents } from '@/hooks/use-events';
 
 import { formatTime } from '@/lib/format-time';
+import Image from 'next/image';
 
 export const ListView = () => {
   const { toast } = useToast();
@@ -18,7 +19,11 @@ export const ListView = () => {
   const deleteEvent = useMutation(api.events.deleteEvent);
 
   if (data === undefined) {
-    return <p>Loading...</p>;
+    return Array.from({ length: 2 }).map((_, i) => (
+      <div key={i} className="border w-full h-[300px] rounded-md p-2 relative">
+        <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-md overflow-hidden relative"></div>
+      </div>
+    ));
   }
 
   if (data.length === 0) {
@@ -34,24 +39,19 @@ export const ListView = () => {
     <>
       {data.map((n) => {
         return (
-          <NewsLetterEvent
-            key={n._id}
-            name={n.name}
-            onDelete={async () => {
-              await deleteEvent({ id: n._id });
-              toast({ title: 'Event deleted successfully' });
-            }}
-          >
-            <NewsLetterEvent.Location
-              city={`${n.location.city}, ${n.location.state}`}
-              date={new Date(n.date).toLocaleDateString('en-us', {
-                weekday: 'long',
-                month: 'long',
-                day: 'numeric',
-              })}
-              time={formatTime(n.time)}
-            />
-          </NewsLetterEvent>
+          <div key={n._id} className="border w-full h-[300px] rounded-md p-2 relative">
+            <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-md overflow-hidden relative">
+              <Image
+                fill
+                className="object-cover"
+                src="https://picsum.photos/seed/picsum/417/282"
+                alt="placeholder-image"
+              />
+              <div className="absolute inset-0 rounded-md bg-gradient-to-br from-black to-transparent">
+                <p className="absolute left-6 top-6 text-white text-xl">{n.name}</p>
+              </div>
+            </div>
+          </div>
         );
       })}
     </>
