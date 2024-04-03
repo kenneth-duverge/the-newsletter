@@ -12,6 +12,7 @@ import { useEvents } from '@/hooks/use-events';
 
 import { formatTime } from '@/lib/format-time';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const ListView = () => {
   const { toast } = useToast();
@@ -39,19 +40,21 @@ export const ListView = () => {
     <>
       {data.map((n) => {
         return (
-          <div key={n._id} className="border w-full h-[300px] rounded-md p-2 relative">
-            <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-md overflow-hidden relative">
-              <Image
-                fill
-                className="object-cover"
-                src="https://picsum.photos/seed/picsum/417/282"
-                alt="placeholder-image"
-              />
-              <div className="absolute inset-0 rounded-md bg-gradient-to-br from-black to-transparent">
-                <p className="absolute left-6 top-6 text-white text-xl">{n.name}</p>
+          <Link key={n._id} href={`/event/${n._id}`}>
+            <div className="border w-full h-[300px] rounded-md p-2 relative">
+              <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-md overflow-hidden relative">
+                <Image
+                  fill
+                  className="object-cover"
+                  src="https://picsum.photos/seed/picsum/417/282"
+                  alt="placeholder-image"
+                />
+                <div className="absolute inset-0 rounded-md bg-gradient-to-br from-black to-transparent">
+                  <p className="absolute left-6 top-6 text-white text-xl">{n.name}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </>
