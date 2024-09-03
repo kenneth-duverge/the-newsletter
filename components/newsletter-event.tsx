@@ -9,7 +9,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Button } from './ui/button';
 import Image from 'next/image';
 
 export const NewsLetterEvent = ({
@@ -32,10 +31,6 @@ export const NewsLetterEvent = ({
           </div>
           <div className="flex flex-col gap-4">
             <h1 className="font-bold text-lg">{name}</h1>
-            {/* <p className="truncate w-full max-w-[400px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, perferendis
-              debitis sapiente aliquam aliquid excepturi.
-            </p> */}
           </div>
         </div>
         <div className="w-[100px] flex h-full gap-2 justify-end items-start">
@@ -54,24 +49,3 @@ export const NewsLetterEvent = ({
     </div>
   );
 };
-
-interface EventLocation {
-  city: string;
-  date: string;
-  time: string;
-}
-
-const Location = ({ city, date, time }: EventLocation) => {
-  return (
-    <div className="flex flex-col gap-1 text-slate-600">
-      <p>
-        <span></span>
-        {/* {city} */}
-      </p>
-      {/* <p>{date}</p> */}
-      {/* <p>{time || '8 PM'}</p> */}
-    </div>
-  );
-};
-
-NewsLetterEvent.Location = Location;

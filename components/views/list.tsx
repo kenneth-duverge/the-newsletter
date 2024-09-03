@@ -41,8 +41,8 @@ export const ListView = () => {
       {data.map((n) => {
         return (
           <Link key={n._id} href={`/event/${n._id}`}>
-            <div className="border w-full h-[300px] rounded-md p-2 relative">
-              <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-md overflow-hidden relative">
+            <div className="w-full h-[300px] rounded-md p-2 relative gradient-background shadow-md bg-white outline outline-1 outline-slate-800">
+              <div className="bg-slate-100 w-full h-full bg-blend-multiply rounded-sm overflow-hidden relative">
                 <Image
                   fill
                   className="object-cover"

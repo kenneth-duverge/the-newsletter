@@ -43,7 +43,7 @@ export const PageLayout = ({ children }: React.PropsWithChildren) => {
           </LayoutGroup>
         </motion.div>
       </header>
-      <div className="container flex flex-col mx-auto justify-center items-center p-8 gap-4">
+      <div className="flex flex-col justify-center items-center gap-4">
         {children}
       </div>
     </main>
