@@ -19,9 +19,9 @@ export const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
-          <SignOutButton>Sign Out</SignOutButton>
-        </DropdownMenuItem>
+        <SignOutButton>
+          <DropdownMenuItem>Sign Out</DropdownMenuItem>
+        </SignOutButton>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -1,9 +1,11 @@
 'use client';
 
+import { SignInButton, SignedIn, SignedOut } from '@clerk/clerk-react';
 import { ChevronLeft } from 'lucide-react';
 import { AnimatePresence, motion, LayoutGroup } from 'framer-motion';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { UserButton } from './user-button';
 
 export const PageLayout = ({ children }: React.PropsWithChildren) => {
   const pathname = usePathname();
@@ -16,16 +18,17 @@ export const PageLayout = ({ children }: React.PropsWithChildren) => {
           <LayoutGroup>
             <AnimatePresence mode="wait">
               {isEventPage && (
-                <motion.span
-                  className="cursor-pointer"
-                  onClick={() => router.back()}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: 'keyframes', duration: 0.3 }}
-                >
-                  <ChevronLeft />
-                </motion.span>
+                <Link href="/">
+                  <motion.span
+                    className="cursor-pointer no-underline"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ type: 'keyframes', duration: 0.3 }}
+                  >
+                    <ChevronLeft />
+                  </motion.span>
+                </Link>
               )}
             </AnimatePresence>
 
@@ -42,6 +45,12 @@ export const PageLayout = ({ children }: React.PropsWithChildren) => {
             </AnimatePresence>
           </LayoutGroup>
         </motion.div>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
       </header>
       <div className="flex flex-col justify-center items-center gap-4">{children}</div>
     </main>
