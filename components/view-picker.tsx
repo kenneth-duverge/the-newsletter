@@ -30,19 +30,11 @@ const LinkButton = ({
   );
 };
 
-export const ViewPicker = () => {
+export const NavLinks = () => {
   const pathname = usePathname();
   return (
     <nav className="flex gap-2 w-fit p-4">
-      <LinkButton href="/calendar" active={pathname.includes('calendar')}>
-        <CalendarDays />
-      </LinkButton>
-      <LinkButton href="/list" active={pathname.includes('list')}>
-        <List />
-      </LinkButton>
-      <LinkButton href="/blog" active={pathname.includes('blog')}>
-        <BookOpenText />
-      </LinkButton>
+      <Link href="/events">Events</Link>
     </nav>
   );
 };

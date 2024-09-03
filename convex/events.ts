@@ -39,3 +39,10 @@ export const deleteEvent = mutation({
     await ctx.db.delete(args.id);
   },
 });
+
+export const getEvent = query({
+  args: { id: v.id('events') },
+  handler: async (ctx, args) => {
+    return await ctx.db.get(args.id);
+  },
+});
